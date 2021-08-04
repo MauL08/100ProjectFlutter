@@ -21,6 +21,9 @@ class _Project002State extends State<Project002> {
     return Scaffold(
       body: _pages[_navIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.blue.shade800,
+        unselectedItemColor: Colors.grey,
+        elevation: 0.0,
         onTap: (index) {
           setState(() {
             _navIndex = index;
@@ -29,31 +32,19 @@ class _Project002State extends State<Project002> {
         currentIndex: _navIndex,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.assignment,
-              color: Colors.grey,
-            ),
+            icon: Icon(Icons.home),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.grey,
-            ),
+            icon: Icon(Icons.send),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_box,
-              color: Colors.grey,
-            ),
+            icon: Icon(Icons.favorite),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.villa,
-              color: Colors.grey,
-            ),
+            icon: Icon(Icons.account_box),
             label: "",
           ),
         ],

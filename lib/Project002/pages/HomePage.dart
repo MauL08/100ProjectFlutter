@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onehundred/Project002/data/ProductData.dart';
+import 'package:onehundred/Project002/pages/ProductPage.dart';
 
 class HomePage extends StatelessWidget {
   final List<ProductData> data = ProductList;
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
         children: [
           Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: new AppBar(
+            appBar: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0.0,
               leading: Builder(
@@ -201,9 +202,25 @@ class HomePage extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Image.asset(
-                                    item.image,
-                                    height: 100.0,
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.transparent,
+                                      elevation: 0.0,
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return ProductPage();
+                                          },
+                                        ),
+                                      );
+                                    },
+                                    child: Image.asset(
+                                      item.image,
+                                      height: 100.0,
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 20.0,
